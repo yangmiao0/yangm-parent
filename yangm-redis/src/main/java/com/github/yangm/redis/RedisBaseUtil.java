@@ -34,6 +34,7 @@ public class RedisBaseUtil<K, V> {
     /** List */
     @Autowired
     private ListOperations<K, V> listOperations;
+    
 	/**
 	 * 将k，v存入缓存
 	 * 永久有效期
@@ -69,6 +70,11 @@ public class RedisBaseUtil<K, V> {
 		
 	}
 	
+	/**
+	 * 获取缓存
+	 * @param key
+	 * @return
+	 */
 	public V getFromCache(K key) {
 		long startTime = System.currentTimeMillis();
 		V v = null;
@@ -102,6 +108,10 @@ public class RedisBaseUtil<K, V> {
 		
 	}
 	
+	/**
+	 * 删除缓存
+	 * @param key
+	 */
 	public void deleteFromCache(K key) {
 		long startTime = System.currentTimeMillis();
 		try {
