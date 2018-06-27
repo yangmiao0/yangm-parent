@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Select;
 
-import com.github.yangm.mybatis.model.User;
+import com.github.yangm.common.entity.User;
 
 /**   
  * 

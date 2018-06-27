@@ -1,4 +1,4 @@
-package com.github.yangm.mybatis.model;
+package com.github.yangm.common.entity;
 
 import lombok.Data;
 

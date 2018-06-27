@@ -1,0 +1,13 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: flow_admin
+    password: flow_pwd
+    publisher-confirms: true    # 开启发送确认
+    listener:
+      simple:
+        acknowledge-mode: manual  # 开启ACK
+        concurrency: 1            #最小消息监听线程数
+        max-concurrency: 8        #最大消息监听线程数
+    
