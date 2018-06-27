@@ -22,11 +22,20 @@ import com.github.yangm.common.constant.Constant;
 @Configuration
 public class RabbitMQConfig {
 
+	/**
+	 * this(name, true, false)
+	 * 默认值持久化
+	 * @return
+	 */
     @Bean
     FanoutExchange fanoutExchange() {
         return new FanoutExchange(Constant.MQ_FANOUT_EXCHANGE);
     }
 	
+    /**
+     * this(name, true, false, false)
+     * @return
+     */
     @Bean
     public Queue fanoutMessage() {
         return new Queue(Constant.MQ_FANOUT_QUEUE);
