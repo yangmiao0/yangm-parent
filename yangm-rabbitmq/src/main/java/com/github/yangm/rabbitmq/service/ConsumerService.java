@@ -1,11 +1,11 @@
 package com.github.yangm.rabbitmq.service;
 
 import java.io.IOException;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
-
 import com.github.yangm.common.constant.Constant;
 import com.github.yangm.common.entity.Book;
 import com.rabbitmq.client.Channel;
@@ -21,9 +21,11 @@ import com.rabbitmq.client.Channel;
 @Service
 public class ConsumerService {
 
+	private static final Logger log = LoggerFactory.getLogger(ConsumerService.class);
+	
 	@RabbitListener(queues = Constant.MQ_FANOUT_QUEUE)
     public void fanoutMessage(Message message, Channel channel) {
-        System.out.println(Thread.currentThread().getName() + " 接收到来自fanoutMessage队列的消息：" + new String(message.getBody()));
+		log.info(Thread.currentThread().getName() + " 接收到来自fanoutMessage队列的消息：" + new String(message.getBody()));
         try {
         	Thread.sleep(100);
 		} catch (Exception e) {
@@ -42,7 +44,7 @@ public class ConsumerService {
 	
 	@RabbitListener(queues = Constant.MQ_ORDER_QUEUE)
     public void orderMessage(Book book,Message message, Channel channel) {
-        System.out.println(Thread.currentThread().getName() + " 接收到来自orderMessage队列的消息：" + book.toString());
+		log.info(Thread.currentThread().getName() + " 接收到来自orderMessage队列的消息：" + book.toString());
         try {
         	Thread.sleep(100);
 			channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);

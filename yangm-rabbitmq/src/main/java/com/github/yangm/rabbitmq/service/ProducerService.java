@@ -2,6 +2,8 @@ package com.github.yangm.rabbitmq.service;
 
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,8 @@ import com.github.yangm.common.entity.Book;
 @Service
 public class ProducerService {
 
+	private static final Logger log = LoggerFactory.getLogger(ProducerService.class);
+	
     @Autowired
     private AmqpTemplate rabbitTemplate;
 	
@@ -26,14 +30,14 @@ public class ProducerService {
     	String sendMsg = "hello ";
         for (int i = 0; i < 10; i++) {
         	sendMsg = sendMsg + i;
-        	System.out.println("sendFanoutMsg : " + sendMsg);
+        	log.info("sendFanoutMsg : " + sendMsg);
         	this.rabbitTemplate.convertAndSend(Constant.MQ_FANOUT_EXCHANGE,"", sendMsg);
 		}
 	}
     
     public void sendOrderMsg() {
     	Book book = new Book().setName("java编程").setDate(new Date());
-    	System.out.println("sendOrderMsg : " + book.toString());
+    	log.info("sendOrderMsg : " + book.toString());
     	this.rabbitTemplate.convertAndSend(Constant.MQ_ORDER_EXCHANGE,"",book);
 	}
     

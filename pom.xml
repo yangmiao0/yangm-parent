@@ -46,5 +46,6 @@
 		<module>yangm-mybatis</module>
 		<module>yangm-rabbitmq</module>
 		<module>yangm-common</module>
+		<module>yangm-redis</module>
 	</modules>
 </project>
