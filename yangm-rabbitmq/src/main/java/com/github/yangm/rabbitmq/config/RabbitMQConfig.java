@@ -13,7 +13,7 @@ import com.github.yangm.common.constant.Constant;
 
 /**   
  * 
- * 功能描述：
+ * 功能描述：只展示企业使用 高效的广播模式
  * @Package: com.github.yangm.rabbitmq.config 
  * @author: yangm
  * @date: 2018年6月27日 下午2:21:43 
