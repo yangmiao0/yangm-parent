@@ -1,0 +1,31 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    dynamic:
+      master:
+        username: root
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&useSSL=false
+      slave:
+        one:
+          username: root
+          password: 123456
+          driver-class-name: com.mysql.jdbc.Driver
+          type: com.alibaba.druid.pool.DruidDataSource
+          url: jdbc:mysql://127.0.0.1:3306/wxmp?characterEncoding=utf8&useSSL=false
+        two:
+          username: root
+          password: 123456
+          driver-class-name: com.mysql.jdbc.Driver
+          type: com.alibaba.druid.pool.DruidDataSource
+          url: jdbc:mysql://127.0.0.1:3306/wxmp?characterEncoding=utf8&useSSL=false
+
+mybatis-plus:
+  mapper-locations: classpath:com.github.yangm/**/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    lazy-loading-enabled: true

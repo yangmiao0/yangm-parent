@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.github.yangm.mybatisplus.dao.CarInfoMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap"
+		type="com.github.yangm.mybatisplus.beans.CarInfo">
+		<id column="id" property="id" />
+		<result column="open_id" property="openId" />
+		<result column="car_plate" property="carPlate" />
+		<result column="car_brand" property="carBrand" />
+		<result column="frame_num" property="frameNum" />
+		<result column="car_type" property="carType" />
+		<result column="engine_num" property="engineNum" />
+		<result column="car_seat" property="carSeat" />
+		<result column="register_day" property="registerDay" />
+		<result column="car_owner" property="carOwner" />
+		<result column="car_owner_identity" property="carOwnerIdentity" />
+		<result column="marker" property="marker" />
+		<result column="create_time" property="createTime" />
+		<result column="del" property="del" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, open_id, car_plate, car_brand, frame_num, car_type, engine_num,
+		car_seat, register_day, car_owner, car_owner_identity, marker,
+		create_time, del
+	</sql>
+
+	<select id="getCarInfoPage" resultMap="BaseResultMap" parameterType="map">
+		select
+		<include refid="Base_Column_List" />
+		from cyh_car where 1 = 1 and del = 0
+		<if test="id != null">
+			and id = #{id}
+		</if>
+		<if test="carPlate != null and carPlate != ''">
+			and car_plate = #{carPlate}
+		</if>
+	</select>
+
+</mapper>
