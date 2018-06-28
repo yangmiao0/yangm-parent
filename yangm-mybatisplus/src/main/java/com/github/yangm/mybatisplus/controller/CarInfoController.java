@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.baomidou.mybatisplus.plugins.Page;
 import com.github.yangm.mybatisplus.beans.CarInfo;
 import com.github.yangm.mybatisplus.dao.CarInfoMapper;
@@ -32,11 +31,13 @@ public class CarInfoController {
 	CarInfoMapper carInfoMapper;
 	
 	@RequestMapping("/getCarInfoById")
+	//@Transactional
 	public CarInfo getCarInfoById(Long id) {
 		CarInfo carInfo = new CarInfo();
 		carInfo.setOpenId("bbbbb");
 		carInfo.setId(3L);
 		carInfoService.updateById(carInfo);
+		//int i = 1/0;
 		//测试从库
 		log.info(carInfoMapper.getSlaveDate().toString());
 		
