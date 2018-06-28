@@ -1,10 +1,13 @@
-package com.github.yangm.mybatis.dao;
+package com.github.yangm.dynamic.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Select;
 
 import com.github.yangm.common.entity.User;
+import com.github.yangm.dynamic.dbrouting.DataSource;
+import com.github.yangm.dynamic.dbrouting.DataSourceType;
 
 /**   
  * 
@@ -19,4 +22,7 @@ public interface UserMapper {
 	@Select("select * from user")
 	List<User> getUserList();
 	
+	@DataSource(DataSourceType.READ)
+	@Select("select * from sys_user")
+	List<Map<String,Object>> getSlaveDate();
 }

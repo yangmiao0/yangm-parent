@@ -1,0 +1,13 @@
+spring:
+  masterdatasource:
+    url: jdbc:mysql://127.0.0.1:3306/test?useOldAliasMetadataBehavior=true&allowMultiQueries=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    username: root
+    password: 123456
+  slavedatasource:
+    url: jdbc:mysql://127.0.0.1:3306/wxmp?useOldAliasMetadataBehavior=true&allowMultiQueries=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
+    username: root
+    password: 123456
+#打印sql
+logging:
+  level:
+    com.github.yangm.dynamic.dao: debug

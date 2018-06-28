@@ -43,10 +43,10 @@
 	</dependencies>
 
 	<modules>
-		<module>yangm-mybatis</module>
 		<module>yangm-rabbitmq</module>
 		<module>yangm-common</module>
 		<module>yangm-redis</module>
 		<module>yangm-mybatisplus</module>
+		<module>yangm-dynamic-db</module>
 	</modules>
 </project>
