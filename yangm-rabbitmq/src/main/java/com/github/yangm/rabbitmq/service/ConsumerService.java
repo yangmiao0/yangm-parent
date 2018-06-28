@@ -1,11 +1,15 @@
 package com.github.yangm.rabbitmq.service;
 
 import java.io.IOException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.support.AmqpHeaders;
+import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Service;
+
 import com.github.yangm.common.constant.Constant;
 import com.github.yangm.common.entity.Book;
 import com.rabbitmq.client.Channel;
@@ -43,11 +47,11 @@ public class ConsumerService {
     }
 	
 	@RabbitListener(queues = Constant.MQ_ORDER_QUEUE)
-    public void orderMessage(Book book,Message message, Channel channel) {
+    public void orderMessage(Book book,@Header(AmqpHeaders.DELIVERY_TAG) long deliveryTag,Channel channel) {
 		log.info(Thread.currentThread().getName() + " 接收到来自orderMessage队列的消息：" + book.toString());
         try {
         	Thread.sleep(100);
-			channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+			channel.basicAck(deliveryTag, false);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
