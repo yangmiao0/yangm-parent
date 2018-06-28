@@ -8,20 +8,20 @@ spring:
         password: 123456
         type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://127.0.0.1:3306/test?useOldAliasMetadataBehavior=true&allowMultiQueries=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
       slave:
         one:
           username: root
           password: 123456
           driver-class-name: com.mysql.jdbc.Driver
           type: com.alibaba.druid.pool.DruidDataSource
-          url: jdbc:mysql://127.0.0.1:3306/wxmp?characterEncoding=utf8&useSSL=false
+          url: jdbc:mysql://127.0.0.1:3306/wxmp?useOldAliasMetadataBehavior=true&allowMultiQueries=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
         two:
           username: root
           password: 123456
           driver-class-name: com.mysql.jdbc.Driver
           type: com.alibaba.druid.pool.DruidDataSource
-          url: jdbc:mysql://127.0.0.1:3306/wxmp?characterEncoding=utf8&useSSL=false
+          url: jdbc:mysql://127.0.0.1:3306/wxmp?useOldAliasMetadataBehavior=true&allowMultiQueries=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
 
 mybatis-plus:
   mapper-locations: classpath:com.github.yangm/**/mapper/*.xml
