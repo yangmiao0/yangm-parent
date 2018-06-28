@@ -8,6 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>yangm-redis</artifactId>
+	<description>redis集成</description>
 
 	<dependencies>
 		<dependency>
