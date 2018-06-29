@@ -33,6 +33,7 @@ public class ConsumerService {
         try {
         	Thread.sleep(100);
 		} catch (Exception e) {
+			//可放入异常队列记录
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
@@ -51,10 +52,18 @@ public class ConsumerService {
 		log.info(Thread.currentThread().getName() + " 接收到来自orderMessage队列的消息：" + book.toString());
         try {
         	Thread.sleep(100);
-			channel.basicAck(deliveryTag, false);
 		} catch (Exception e) {
+			//可放入异常队列记录
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			try {
+				channel.basicAck(deliveryTag, false);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
     }
 	
