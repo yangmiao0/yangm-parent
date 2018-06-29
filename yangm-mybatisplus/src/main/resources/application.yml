@@ -24,7 +24,7 @@ spring:
           url: jdbc:mysql://127.0.0.1:3306/wxmp?useOldAliasMetadataBehavior=true&allowMultiQueries=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
 
 mybatis-plus:
-  mapper-locations: classpath:com.github.yangm/**/mapper/*.xml
+  mapper-locations: classpath:mapping/*.xml
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true
