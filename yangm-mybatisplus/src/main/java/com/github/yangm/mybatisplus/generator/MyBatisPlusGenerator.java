@@ -76,7 +76,7 @@ public class MyBatisPlusGenerator {
 				// .setXml("dao.mapper")
 				.setEntity("beans");
 
-		// 注入自定义配置，可以在 VM 中使用 cfg.abc 【可无】
+		//5 注入自定义配置，可以在 VM 中使用 cfg.abc 【可无】
 		InjectionConfig cfg = new InjectionConfig() {
 			@Override
 			public void initMap() {
@@ -86,7 +86,7 @@ public class MyBatisPlusGenerator {
 			}
 		};
 
-		// 自定义 mapper 生成路径
+		// 6 自定义 mapper 生成路径
 		List<FileOutConfig> focList = new ArrayList<FileOutConfig>();
 		focList.add(new FileOutConfig("/templates/mapper.xml.vm") {
 			@Override
@@ -97,16 +97,16 @@ public class MyBatisPlusGenerator {
 		});
 		cfg.setFileOutConfigList(focList);
 
-		// 关闭默认 xml 生成，调整生成 至 根目录
+		// 7 关闭默认 xml 生成，调整生成 至 根目录
 		TemplateConfig tc = new TemplateConfig();
 		tc.setXml(null);
 
-		// 5. 整合配置
+		// 8. 整合配置
 		AutoGenerator ag = new AutoGenerator();
 		ag.setGlobalConfig(config).setDataSource(dsConfig).setStrategy(stConfig).setPackageInfo(pkConfig).setCfg(cfg)
 				.setTemplate(tc);
 
-		// 6. 执行
+		// 9. 执行
 		ag.execute();
 	}
 

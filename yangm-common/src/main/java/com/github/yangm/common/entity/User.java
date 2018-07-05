@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**   
  * 
- * 功能描述：
+ * 功能描述：使用lombok框架插件 自动生成get set等 IDE需安装插件
  * @Package: com.github.yangm.mybatis.model 
  * @author: yangm
  * @date: 2018年6月27日 下午12:06:35 

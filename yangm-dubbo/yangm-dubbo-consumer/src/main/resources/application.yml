@@ -1,0 +1,14 @@
+server:
+  port: 8082
+
+dubbo:
+  application:
+    name: yangm-dubbo-consumer
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: yangm-dubbo-consumer
+    port: 28082
+demo: 
+  service:
+    version: 1.0.0

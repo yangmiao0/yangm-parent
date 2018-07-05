@@ -1,0 +1,22 @@
+server:
+  port: 8081
+  
+dubbo:
+  application:
+    name: yangm-dubbo-provider
+  registry:
+#    id: me-registry
+#    protocol: zookeeper
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.github.yangm.dubbo.provider.service.impl
+    
+#  protocol:
+#    id: zookeeper
+#    name: yangm-provider
+#    port: 28081
+#  provider:
+#    retries: 0                           # 服务调用重试次数，服务发布者不给重试，让服务调用者自己重试
+demo: 
+  service:
+    version: 1.0.0

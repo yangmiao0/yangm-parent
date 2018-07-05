@@ -48,5 +48,6 @@
 		<module>yangm-redis</module>
 		<module>yangm-mybatisplus</module>
 		<module>yangm-dynamic-db</module>
+		<module>yangm-dubbo</module>
 	</modules>
 </project>
