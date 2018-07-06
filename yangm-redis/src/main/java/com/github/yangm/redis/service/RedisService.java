@@ -28,10 +28,20 @@ public class RedisService {
 	
 	public void redisService() {
 		for (int i = 0; i < 5; i++) {
-			//对key加10秒的锁
+			//防止业务完成 删除key时异常导致死锁 对key加10秒的锁
 			if(redisBaseUtil.setIfAbsentFromCache("redis_key", "简单的分布式锁", 10)) {
 				log.info("key不存在，设值成功");
+				/*try {
+					//do something
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				//业务完成删除锁
+				redisBaseUtil.deleteFromCache("redis_key");*/
 			}else {
+				//测试时间锁
 				log.info("key已存在");
 			}
 			if(i == 2 ) {
