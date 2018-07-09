@@ -1,5 +1,6 @@
 package com.github.yangm.dubbo.provider.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**   
@@ -10,8 +11,13 @@ import java.util.Date;
  * @date: 2018年6月27日 下午3:42:08 
  * @email：1169290944@qq.com
  */
-public class Book {
+public class Book implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7269543726976060060L;
+
 	private String name;
 	
 	private Date date;

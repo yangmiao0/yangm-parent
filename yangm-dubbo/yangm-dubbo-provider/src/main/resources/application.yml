@@ -9,7 +9,7 @@ dubbo:
 #    protocol: zookeeper
     address: zookeeper://127.0.0.1:2181
   scan:
-    base-packages: com.github.yangm.dubbo.provider.service.impl
+    basePackages: com.github.yangm.dubbo.provider.service.impl
     
 #  protocol:
 #    id: zookeeper
@@ -20,3 +20,5 @@ dubbo:
 demo: 
   service:
     version: 1.0.0
+
+
