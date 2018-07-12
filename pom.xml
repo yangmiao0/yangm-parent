@@ -49,5 +49,6 @@
 		<module>yangm-mybatisplus</module>
 		<module>yangm-dynamic-db</module>
 		<module>yangm-dubbo</module>
+		<module>yangm-fastdfs</module>
 	</modules>
 </project>
