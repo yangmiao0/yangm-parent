@@ -50,5 +50,6 @@
 		<module>yangm-dynamic-db</module>
 		<module>yangm-dubbo</module>
 		<module>yangm-fastdfs</module>
+		<module>yangm-cloud</module>
 	</modules>
 </project>
