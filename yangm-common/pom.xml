@@ -11,12 +11,15 @@
 
 	<artifactId>yangm-common</artifactId>
 	<packaging>jar</packaging>
-	
+
 	<dependencies>
 		<!-- 需安装lombok插件 https://projectlombok.org/download -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<!-- Only needed at compile time -->
+			<scope>compile</scope>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
