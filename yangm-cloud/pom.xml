@@ -22,8 +22,12 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
 	<modules>
 		<module>yangm-cloud-eureka</module>
+		<module>yangm-cloud-provider-api</module>
+		<module>yangm-cloud-provider</module>
+		<module>yangm-cloud-consumer</module>
 	</modules>
 
 	<!-- 注意： 这里必须要添加， 否者各种依赖有问题 -->
