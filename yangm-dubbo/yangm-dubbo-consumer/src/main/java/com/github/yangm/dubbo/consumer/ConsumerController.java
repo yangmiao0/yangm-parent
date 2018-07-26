@@ -16,7 +16,7 @@ import com.github.yangm.dubbo.provider.service.BookService;
  * @email：1169290944@qq.com
  */
 @RestController
-public class ConsumerContrller {
+public class ConsumerController {
 
     @Reference(version = "${demo.service.version}")
     //或直接@Reference
