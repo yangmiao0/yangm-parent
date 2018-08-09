@@ -51,5 +51,6 @@
 		<module>yangm-dubbo</module>
 		<module>yangm-fastdfs</module>
 		<module>yangm-cloud</module>
+		<module>yangm-swagger</module>
 	</modules>
 </project>
