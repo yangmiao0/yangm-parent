@@ -3,8 +3,11 @@ package com.github.yangm.mybatisplus.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.baomidou.mybatisplus.plugins.Page;
 import com.github.yangm.mybatisplus.beans.CarInfo;
 import com.github.yangm.mybatisplus.dao.CarInfoMapper;
@@ -30,7 +33,7 @@ public class CarInfoController {
 	@Autowired
 	CarInfoMapper carInfoMapper;
 	
-	@RequestMapping("/getCarInfoById")
+	@GetMapping("/getCarInfoById")
 	//@Transactional
 	public CarInfo getCarInfoById(Long id) {
 		CarInfo carInfo = new CarInfo();
@@ -49,7 +52,7 @@ public class CarInfoController {
 	 * @param pageInfo
 	 * @return
 	 */
-	@RequestMapping("/getCarInfoPage")
+	@PostMapping("/getCarInfoPage")
 	public Page<CarInfo> getCarInfoPage(PageInfo<CarInfo> pageInfo) {
 		//如果key=value入参默认value值都是string类型 注意params条件参数类型转换 json字符串入参可不管
 		return carInfoService.getCarInfoPage(pageInfo);
