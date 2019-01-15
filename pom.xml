@@ -52,5 +52,6 @@
 		<module>yangm-fastdfs</module>
 		<module>yangm-cloud</module>
 		<module>yangm-swagger</module>
+		<module>xxl-job</module>
 	</modules>
 </project>
